@@ -187,22 +187,6 @@ footer.site a{font-weight:600}
 .field input:focus{outline:0;border-color:var(--violet);box-shadow:0 0 0 3px rgba(76,35,204,.38)}
 .live{display:grid;grid-template-columns:1fr 220px;gap:20px;align-items:start}
 @media (max-width:720px){.live{grid-template-columns:1fr}}
-.cchip{display:block;width:36px;height:36px;border-radius:8px;border:1px solid var(--grey-200)}
-.place .stage{background:var(--grey-50);border:1px solid var(--grey-200);border-radius:12px;min-height:140px;display:flex;align-items:center;justify-content:center;gap:12px;padding:20px;margin-bottom:16px;flex-wrap:wrap}
-.place .stage img{max-height:28px;width:auto}
-.place .stage.device img{max-height:48px}
-.place h3{margin:0 0 6px;font-size:18px}
-.place p{font-size:14px;color:var(--grey-500)}
-.place .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);margin-bottom:8px}
-.paper{background:#fff;border:1px solid var(--grey-200);border-radius:4px;display:flex;align-items:center;justify-content:center;padding:8px}
-.paper.bc{width:92px;height:56px}
-.paper.a4{width:52px;height:74px}
-.paper.dl{width:110px;height:40px}
-.paper img{max-height:14px;width:auto}
-.metric{text-align:center;padding:28px 20px}
-.metric .fig{font-size:28px;font-weight:700;color:var(--navy);letter-spacing:0;line-height:1.2}
-.metric .hint{margin-top:8px}
-.sg-names td:first-child{font-weight:600;color:var(--navy)}
 </style>
 </head>
 <body>
@@ -239,7 +223,7 @@ footer.site a{font-weight:600}
       <a href="#imagery">Imagery</a>
       <a href="#components">Components</a>
       <a href="#voice">Voice</a>
-      <a href="#print">Print</a>
+      <a href="../print.html">Print</a>
       <a href="../ad-specs.html">Ad specs</a>
     </nav>
   </div>
@@ -754,114 +738,9 @@ footer.site a{font-weight:600}
     </table>
   </div>
 </section>
-<section class="block" id="print">
-  <div class="wrap">
-    <h2>Print and placement</h2>
-    <p class="lede">The style guide is a print document. Digital keeps hex. Print uses these CMYK values and millimetre sizes. Same three marks, same clear space (O-height), same “don’t recolour or warp” rule.</p>
-    <h3>Print colour</h3>
-    <p class="lede">Six inks, matching the digital palette. Hex is the digital twin and the canonical token.</p>
-    <table>
-      <thead><tr><th></th><th>Name</th><th>Hex</th><th>C</th><th>M</th><th>Y</th><th>K</th></tr></thead>
-      <tbody>
-        <tr><td><span class="cchip" style="background:#002A66"></span></td><td>Navy</td><td class="mono">#002A66</td><td class="mono">100</td><td class="mono">87</td><td class="mono">35</td><td class="mono">22</td></tr>
-<tr><td><span class="cchip" style="background:#3B0066"></span></td><td>Plum</td><td class="mono">#3B0066</td><td class="mono">93</td><td class="mono">100</td><td class="mono">26</td><td class="mono">20</td></tr>
-<tr><td><span class="cchip" style="background:#4C23CC"></span></td><td>Violet</td><td class="mono">#4C23CC</td><td class="mono">87</td><td class="mono">82</td><td class="mono">0</td><td class="mono">0</td></tr>
-<tr><td><span class="cchip" style="background:#FFB3B3"></span></td><td>Blush</td><td class="mono">#FFB3B3</td><td class="mono">0</td><td class="mono">40</td><td class="mono">21</td><td class="mono">0</td></tr>
-<tr><td><span class="cchip" style="background:#FF23CC"></span></td><td>Magenta</td><td class="mono">#FF23CC</td><td class="mono">54</td><td class="mono">78</td><td class="mono">0</td><td class="mono">0</td></tr>
-<tr><td><span class="cchip" style="background:#BF3BD9"></span></td><td>Orchid</td><td class="mono">#BF3BD9</td><td class="mono">24</td><td class="mono">81</td><td class="mono">0</td><td class="mono">0</td></tr>
-      </tbody>
-    </table>
-    <p class="hint" style="margin-top:12px">The PDF’s RGB for navy and violet is off by one versus the hex. Hex wins.</p>
-    <h3>Print type</h3>
-    <p class="lede">Optical kerning. Tracking 0 on heads, +10 on body. Sentence case — never all-caps or all-lowercase.</p>
-    <table>
-      <thead><tr><th>Role</th><th>Print</th><th>Digital</th><th>Setting</th></tr></thead>
-      <tbody>
-        <tr><td>Slogan</td><td class="mono">48–52pt</td><td class="mono">64px</td><td>Optical kerning, tracking 0, sentence case</td></tr>
-<tr><td>Header</td><td class="mono">38–42pt</td><td class="mono">52px display / 32px h2</td><td>Optical kerning, tracking 0, sentence case</td></tr>
-<tr><td>Subtitle</td><td class="mono">27–32pt</td><td class="mono">32px</td><td>Tracking 0. Brand full stop in blush, once per view</td></tr>
-<tr><td>Body</td><td class="mono">9–12pt</td><td class="mono">16px</td><td>Optical kerning, tracking +10, sentence case</td></tr>
-      </tbody>
-    </table>
-    <p class="hint" style="margin-top:12px">The style guide calls the subtitle stop “red”. Ours is blush, once per view.</p>
-    <h3>Logo size</h3>
-    <p class="lede">Clear space is the O-height, all four sides, every variation. Style guide names map to ours: Primary = wordmark, Primary-TAG = tagline lockup, Primary-Special use = O device.</p>
-    <div class="grid3">
-      <article class="card metric">
-        <p class="fig">20–30 mm</p>
-        <p class="hint">Print minimum. Don’t force a mark smaller.</p>
-      </article>
-      <article class="card metric">
-        <p class="fig">140 px</p>
-        <p class="hint">Digital minimum. Same rule as the rest of this page.</p>
-      </article>
-      <article class="card metric">
-        <p class="fig">O-height</p>
-        <p class="hint">Clear space, all four sides, every variation.</p>
-      </article>
-    </div>
-    <div class="grid3" style="margin-top:20px">
-      <article class="card mark-card">
-        <div class="stage"><img src="assets/wordmark.svg" alt="Kudosity primary wordmark"></div>
-        <p class="tag">Primary</p>
-        <h3>Wordmark</h3>
-        <p>Default on stationery, tees, totes and pens — if it holds 20 mm.</p>
-      </article>
-      <article class="card mark-card">
-        <div class="stage"><img src="assets/tagline.svg" alt="Kudosity wordmark with tagline"></div>
-        <p class="tag">Primary-TAG</p>
-        <h3>Tagline lockup</h3>
-        <p>Where the brand needs to explain itself once. Not a running header.</p>
-      </article>
-      <article class="card mark-card">
-        <div class="stage device"><img src="assets/o-device.svg" alt="Kudosity O device"></div>
-        <p class="tag">Primary-Special use</p>
-        <h3>O device</h3>
-        <p>The guide’s special-use mark. Right choice for a coffee cup.</p>
-      </article>
-    </div>
-    <h3>Placement</h3>
-    <p class="lede">Style guide examples as cards, not product shots. Pick the mark that fits. Keep O-height of clear space. Don’t recolour or warp the artwork around a seam.</p>
-    <div class="grid3">
-      <article class="card place">
-        <div class="stage">
-          <div class="paper bc"><img src="assets/wordmark.svg" alt=""></div>
-          <div class="paper a4"><img src="assets/wordmark.svg" alt=""></div>
-          <div class="paper dl"><img src="assets/wordmark.svg" alt=""></div>
-        </div>
-        <p class="tag">Stationery</p>
-        <h3>Business card, A4, envelope DL</h3>
-        <p>Pick the mark that fits the format. Keep O-height of clear space on every side.</p>
-      </article>
-      <article class="card place">
-        <div class="stage"><img src="assets/wordmark.svg" alt="Kudosity wordmark"></div>
-        <p class="tag">Uniform</p>
-        <h3>Tees</h3>
-        <p>Follow the uniform placement in the guide. Don’t warp the mark around a seam.</p>
-      </article>
-      <article class="card place">
-        <div class="stage"><img src="assets/wordmark.svg" alt="Kudosity wordmark"></div>
-        <p class="tag">Gift</p>
-        <h3>Tote</h3>
-        <p>Large horizontal wordmark. Primary, not the O, not a rebuilt type lockup.</p>
-      </article>
-      <article class="card place">
-        <div class="stage device"><img src="assets/o-device.svg" alt="Kudosity O device"></div>
-        <p class="tag">Special use</p>
-        <h3>Coffee cup</h3>
-        <p>The O device is the right special-use mark. The guide says so.</p>
-      </article>
-      <article class="card place">
-        <div class="stage"><img src="assets/wordmark.svg" alt="Kudosity wordmark"></div>
-        <p class="tag">Small goods</p>
-        <h3>Pens</h3>
-        <p>Wordmark if it holds 20 mm. Otherwise don’t force it.</p>
-      </article>
-    </div>
-  </div>
-</section>
 <section class="block" id="ads">
   <div class="wrap">
+    <div class="grid2">
     <article class="card cta">
       <div>
         <p class="eyebrow" style="color:var(--violet);margin-bottom:8px">Paid media</p>
@@ -870,6 +749,15 @@ footer.site a{font-weight:600}
       </div>
       <a class="pill primary" href="../ad-specs.html">Open ad specs</a>
     </article>
+    <article class="card cta">
+      <div>
+        <p class="eyebrow" style="color:var(--violet);margin-bottom:8px">Print</p>
+        <h3>Print and placement</h3>
+        <p class="hint">CMYK, millimetres, stationery and merch</p>
+      </div>
+      <a class="pill primary" href="../print.html">Open print specs</a>
+    </article>
+    </div>
   </div>
 </section>
 <section class="block alt" id="open">
@@ -914,7 +802,7 @@ footer.site a{font-weight:600}
     </g>
   </g>
 </svg></a>
-    <p>Kudosity design system · <a href="../index.html">Home</a> · <a href="../ad-specs.html">Ad specs</a></p>
+    <p>Kudosity design system · <a href="../index.html">Home</a> · <a href="../ad-specs.html">Ad specs</a> · <a href="../print.html">Print</a></p>
   </div>
 </footer>
 </body>
