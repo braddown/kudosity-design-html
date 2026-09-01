@@ -139,11 +139,31 @@ footer.site a{font-weight:600}
       <a href="#gdn">GDN</a>
       <a href="#reddit">Reddit</a>
       <a href="#meta">Meta</a>
+      <a href="#linkedin">LinkedIn</a>
       <a href="#margins">Margins</a>
       <a href="#order">Production order</a>
     </nav>
   </div>
 </header>
+
+
+<section class="block" id="brief">
+  <div class="wrap">
+    <h2>Campaign brief</h2>
+    <p class="lede">Artwork comes from the Kudosity design system and a campaign brief — not from scraping the marketing website, and not from a single image prompt.</p>
+    <div class="rules">
+      <article class="rule">
+        <h3>Source and input</h3>
+        <p>Logos, colours, type and voice from the design system. The brief names funnels, offer, CTA and audience.</p>
+      </article>
+      <article class="rule">
+        <h3>Output</h3>
+        <p>The full unit set for the platforms in the brief — PMAX, GDN, Reddit, Meta, LinkedIn as named. One artwork family per funnel. Three funnels → three families × the sizes below.</p>
+      </article>
+    </div>
+    <p class="note">Build the four masters first. Crop PMAX, Reddit, Meta and the LinkedIn carousel. Relayout GDN. Crop LinkedIn portrait from the vertical master — not from the 4:5.</p>
+  </div>
+</section>
 
 <section class="shapes" id="masters">
   <div class="wrap">
@@ -270,7 +290,23 @@ footer.site a{font-weight:600}
   </div>
 </section>
 
-<section class="block" id="margins">
+
+<section class="block" id="linkedin">
+  <div class="wrap">
+    <h2>LinkedIn</h2>
+    <p class="lede">Portrait is not a 4:5 crop. Take it from the vertical master, or relayout. Do not scale the 960 × 1200 portrait to this size. Carousel is a crop of the square.</p>
+    <table>
+      <thead><tr><th>Placement</th><th>Size</th><th>Ratio</th><th>Master</th></tr></thead>
+      <tbody>
+        <tr><td>Portrait ad</td><td class="mono">627 × 1200</td><td>1:1.91</td><td>Crop of Vertical</td></tr>
+        <tr><td>Carousel</td><td class="mono">1080 × 1080</td><td>1:1</td><td>Square</td></tr>
+      </tbody>
+    </table>
+    <p class="note">627 × 1200 is a small side crop of 1080 × 1920, or a relayout. Never scale the 960 × 1200 portrait to this size.</p>
+  </div>
+</section>
+
+<section class="block alt" id="margins">
   <div class="wrap">
     <h2>Margins and safe areas</h2>
     <p class="lede">Starting points. Testing is still recommended.</p>
@@ -312,7 +348,7 @@ footer.site a{font-weight:600}
         <div class="n">01</div>
         <div>
           <h3>Square master <span class="mono">1200 × 1200</span></h3>
-          <p>Covers PMAX square, Reddit carousel, and crops to Meta 1080.</p>
+          <p>Covers PMAX square, Reddit carousel, LinkedIn carousel, and crops to Meta 1080.</p>
         </div>
       </div>
       <div class="step">
@@ -326,7 +362,7 @@ footer.site a{font-weight:600}
         <div class="n">03</div>
         <div>
           <h3>Portrait + vertical</h3>
-          <p><span class="mono">960 × 1200</span> and <span class="mono">1080 × 1920</span>. Feed portrait plus Stories, chrome band respected.</p>
+          <p><span class="mono">960 × 1200</span> and <span class="mono">1080 × 1920</span>. Feed portrait plus Stories, chrome band respected. LinkedIn portrait crops from the vertical.</p>
         </div>
       </div>
       <div class="step">
