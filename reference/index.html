@@ -15,6 +15,7 @@
   --brand:linear-gradient(135deg,#3B0066 0%,#4C23CC 100%);
   --hot:linear-gradient(135deg,#FF23CC 0%,#BF3BD9 100%);
   --shadow:0 6px 16px rgba(0,42,102,.10);
+  --shadow-brand:0 10px 24px rgba(76,35,204,.28);
   --sans:"Noto Sans",system-ui,sans-serif;
   --mono:"Noto Sans Mono",ui-monospace,monospace;
 }
@@ -91,11 +92,11 @@ section.block h4{font-size:16px;font-weight:600;color:var(--navy);margin:0 0 12p
 .pill.primary{background:var(--violet);color:#fff}
 .pill.ghost{border:1px solid var(--violet);color:var(--violet);background:transparent}
 .sbar{display:flex;align-items:center;gap:12px;margin:6px 0}
-.sbar span{width:36px;font-size:12px;color:var(--grey-500)}
+.sbar span{width:40px;font-size:12px;color:var(--grey-500)}
 .sbar i{display:block;height:12px;background:var(--violet);border-radius:4px}
 .rads{display:flex;flex-wrap:wrap;gap:20px}
 .rad{text-align:center;width:88px}
-.radbox{width:64px;height:64px;margin:0 auto 8px;background:#f2efff;border:2px solid var(--violet)}
+.radbox{width:64px;height:64px;margin:0 auto 8px;background:var(--grey-50);border:2px solid var(--violet)}
 .rad .mono{font-size:12px;color:var(--navy)}
 .product .lockup{height:44px;width:auto;margin-bottom:16px}
 .product .row{display:flex;gap:12px;align-items:flex-start}
@@ -119,12 +120,73 @@ tr:last-child td{border-bottom:0}
 .rule p{font-size:15px}
 .cta{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .cta h3{font-size:24px;font-weight:700;color:var(--navy);margin:0 0 6px}
-.cta a.pill.primary:hover{background:#3D1BA8;color:#fff}
+.cta a.pill.primary:hover{background:#3D1BA8;color:#fff;box-shadow:var(--shadow-brand)}
 footer.site{padding:48px 0 64px;background:var(--grey-50)}
 footer.site .inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 footer.site .wordmark{width:140px;height:auto}
 footer.site p{font-size:13px;color:var(--grey-500)}
 footer.site a{font-weight:600}
+
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:900px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid4{grid-template-columns:1fr}}
+.intro{max-width:62ch;margin-bottom:28px}
+.intro p{margin-bottom:12px}
+.sources{margin-top:28px;font-size:13px;color:var(--grey-500);max-width:72ch}
+.mindsets{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:8px}
+@media (max-width:960px){.mindsets{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.mindsets{grid-template-columns:1fr}}
+.mindset{background:#fff;border:1px solid var(--grey-200);border-radius:16px;box-shadow:var(--shadow);padding:20px 20px 22px}
+.mindset h3{font-size:16px;font-weight:600;color:var(--navy);margin:0 0 6px}
+.mindset p{font-size:14px;color:var(--grey-500);margin:0}
+.comms{margin-top:32px;padding:24px;border:1px solid rgba(255,255,255,.16);border-radius:16px;background:rgba(255,255,255,.06)}
+.comms h3{color:#fff;font-size:18px;font-weight:600;margin:0 0 6px}
+.comms p{color:rgba(255,255,255,.72);font-size:15px;margin:0;max-width:60ch}
+.vcard h3{font-size:16px;font-weight:600;color:var(--navy);margin:0 0 8px}
+.vcard p{font-size:14px;margin:0}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0 8px}
+@media (max-width:720px){.ba{grid-template-columns:1fr}}
+.ba article{background:#fff;border:1px solid var(--grey-200);border-radius:16px;padding:20px 24px}
+.ba .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.ba .no .tag{color:var(--grey-500)}
+.ba .yes .tag{color:var(--violet)}
+.ba p.line{font-size:15px;color:var(--navy);margin:0}
+.ba .no p.line{color:var(--grey-500)}
+.chrome-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+@media (max-width:800px){.chrome-row{grid-template-columns:1fr}}
+.photos.secondary{grid-template-columns:1.15fr .85fr;margin-top:16px;align-items:stretch}
+.photos.secondary img{height:100%;min-height:220px}
+.photos.secondary .note{display:flex;flex-direction:column;justify-content:center}
+.patterns{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:720px){.patterns{grid-template-columns:1fr}}
+.pattern{position:relative;height:240px;border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--grey-200)}
+.pattern img{position:absolute;right:-10%;top:8%;width:92%;opacity:.18;pointer-events:none}
+.pattern .label{position:absolute;left:20px;bottom:18px;font-size:13px;font-weight:600;color:var(--navy)}
+.card.subtle{background:var(--grey-50)}
+.card.brand-card{background:var(--brand);color:#fff;border:0}
+.card.brand-card h4,.card.brand-card p,.card.brand-card .hint{color:#fff}
+.glass-stage{background:var(--brand);border-radius:16px;padding:28px;min-height:168px;display:flex;align-items:flex-end}
+.glass-card{width:100%;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.55);border-radius:16px;padding:20px 22px;box-shadow:0 18px 44px rgba(59,0,102,.24)}
+.glass-card h4{color:var(--navy);margin:0 0 6px;font-size:16px;font-weight:600}
+.glass-card p{margin:0;font-size:14px;color:var(--grey-700)}
+.variants{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:900px){.variants{grid-template-columns:repeat(2,1fr)}}
+.shades{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:12px}
+@media (max-width:800px){.shades{grid-template-columns:repeat(3,1fr)}}
+.shade{background:#fff;border-radius:16px;padding:28px 12px;text-align:center;border:1px solid var(--grey-200)}
+.shade .mono{display:block;color:var(--navy);font-size:12px}
+.shade .hint{display:block;margin-top:4px}
+.ship-shapes{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.ship-shapes span{display:inline-flex;align-items:center;height:32px;padding:0 14px;border-radius:999px;border:1px solid var(--grey-200);background:#fff;font-size:13px;font-weight:600;color:var(--navy)}
+.phone{width:220px;border:1.5px solid var(--grey-200);border-radius:32px;padding:28px 16px 20px;background:#fff;box-shadow:var(--shadow)}
+.bubble{max-width:100%;background:var(--grey-50);border-radius:20px 20px 4px 20px;padding:10px 14px;font-size:14px;margin:8px 0}
+.bubble.out{background:var(--violet);color:#fff;border-radius:20px 20px 20px 4px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:14px;font-weight:600;color:var(--navy)}
+.field input{height:40px;border:1.5px solid var(--grey-200);border-radius:10px;padding:0 14px;font:inherit;color:var(--grey-700);background:#fff}
+.field input:focus{outline:0;border-color:var(--violet);box-shadow:0 0 0 3px rgba(76,35,204,.38)}
+.live{display:grid;grid-template-columns:1fr 220px;gap:20px;align-items:start}
+@media (max-width:720px){.live{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -151,9 +213,9 @@ footer.site a{font-weight:600}
 </svg></a>
     <p class="eyebrow">Reference v1.0</p>
     <h1>Kudosity Design System<span class="stop">.</span></h1>
-    <p>The single reference for the brand marks, colour, type, imagery, components and the product logo suite. Derived from the Kudosity Brandbook v1.0 and the supplied logo artwork.</p>
+    <p>An Australian business-messaging platform — SMS, MMS and rich messaging at scale. Messaging customers love. That’s the essence. The tagline puts you in it: Messaging your customers love. Curiosity is the engine.</p>
     <nav>
-      <a href="#marks">Brand marks</a>
+      <a href="#brand">Brand</a>
       <a href="#colour">Colour</a>
       <a href="#type">Type</a>
       <a href="#space">Spacing</a>
@@ -165,10 +227,13 @@ footer.site a{font-weight:600}
     </nav>
   </div>
 </header>
-<section class="block" id="marks">
+<section class="block" id="brand">
   <div class="wrap">
     <h2>Brand marks</h2>
-    <p class="lede">Three official artworks only. Always place the supplied file. Never rebuild the wordmark from Noto Sans.</p>
+    <div class="intro">
+      <p class="lede" style="margin-bottom:12px">The visual contract for how Kudosity looks and sounds. Three official artworks, eight products, one voice. Always place the supplied file. Never rebuild the wordmark from Noto Sans.</p>
+      <p>We exist to make business more human by helping businesses build authentic relationships with their customers. That’s the mission in our words. Not a slogan for a slide — the reason the blush smile sits in the O.</p>
+    </div>
     <div class="grid3">
       <article class="card mark-card">
         <div class="stage"><img src="assets/wordmark.svg" alt="Kudosity primary wordmark"></div>
@@ -186,9 +251,19 @@ footer.site a{font-weight:600}
         <div class="stage device"><img src="assets/o-device.svg" alt="Kudosity O device"></div>
         <p class="tag">Avatar, favicon, watermark</p>
         <h3>O device</h3>
-        <p>The only proprietary glyph. Identifies. Doesn’t sign off. Never a decorative bullet.</p>
+        <p>The only proprietary glyph. Identifies. Doesn’t sign off. Never a decorative bullet. Never a toolbar icon.</p>
       </article>
     </div>
+    <h3>Mindsets</h3>
+    <p class="lede">How we show up. Five internal postures — not campaign lines, not UI labels.</p>
+    <div class="mindsets">
+      <article class="mindset"><h3>Empathy</h3><p>Think with empathy</p></article>
+<article class="mindset"><h3>Growth</h3><p>Break stuff until it works</p></article>
+<article class="mindset"><h3>Craft</h3><p>Bring your secret sauce</p></article>
+<article class="mindset"><h3>Diversity</h3><p>Simplify everything</p></article>
+<article class="mindset"><h3>Simplicity</h3><p>Ship it real good</p></article>
+    </div>
+    <p class="sources">Brandbook v1.0 (Nov 2023) is primary. Logo artwork is official. kudosity.com for product vocab. No Figma or codebase was supplied; this page is the visual contract.</p>
   </div>
 </section>
 <section class="navy" id="on-dark">
@@ -218,6 +293,10 @@ footer.site a{font-weight:600}
       <li>Don’t lock it up with another logo without O-height of clear space.</li>
       <li>Don’t use the O device in place of the wordmark as a signature.</li>
     </ul>
+    <div class="comms">
+      <h3>Corporate comms</h3>
+      <p>Regulation and formal notices shift register. They use navy, not violet. Voice tightens; it never becomes stuffy.</p>
+    </div>
   </div>
 </section>
 <section class="block alt" id="colour">
@@ -310,7 +389,7 @@ footer.site a{font-weight:600}
     <p class="lede">Noto Sans, across every medium. Light 300 for paragraphs, SemiBold 600 for subtitles, Bold 700 for headers. Sentence case. Australian English. No substitute family in produced artwork.</p>
     <div class="specimen">
       <p class="meta">Slogan · 64px · 700</p>
-      <p class="slogan">Messaging your customers love<span class="stop">.</span></p>
+      <p class="slogan">Messaging your customers love</p>
       <p class="meta">Display · 52px · 700</p>
       <p class="display">Built for the way people talk</p>
       <p class="meta">Subtitle · 32px · 600</p>
@@ -333,11 +412,26 @@ footer.site a{font-weight:600}
     <div class="grid2">
       <article class="card">
         <h4>Spacing — 4px base</h4>
-        <div class="sbar"><span class="mono">4</span><i style="width:4px"></i></div><div class="sbar"><span class="mono">8</span><i style="width:8px"></i></div><div class="sbar"><span class="mono">12</span><i style="width:12px"></i></div><div class="sbar"><span class="mono">16</span><i style="width:16px"></i></div><div class="sbar"><span class="mono">20</span><i style="width:20px"></i></div><div class="sbar"><span class="mono">24</span><i style="width:24px"></i></div><div class="sbar"><span class="mono">32</span><i style="width:32px"></i></div><div class="sbar"><span class="mono">40</span><i style="width:40px"></i></div><div class="sbar"><span class="mono">48</span><i style="width:48px"></i></div><div class="sbar"><span class="mono">64</span><i style="width:64px"></i></div><div class="sbar"><span class="mono">80</span><i style="width:80px"></i></div><div class="sbar"><span class="mono">96</span><i style="width:96px"></i></div>
+        <div class="sbar"><span class="mono">4</span><i style="width:4px"></i></div><div class="sbar"><span class="mono">8</span><i style="width:8px"></i></div><div class="sbar"><span class="mono">12</span><i style="width:12px"></i></div><div class="sbar"><span class="mono">16</span><i style="width:16px"></i></div><div class="sbar"><span class="mono">20</span><i style="width:20px"></i></div><div class="sbar"><span class="mono">24</span><i style="width:24px"></i></div><div class="sbar"><span class="mono">32</span><i style="width:32px"></i></div><div class="sbar"><span class="mono">40</span><i style="width:40px"></i></div><div class="sbar"><span class="mono">48</span><i style="width:48px"></i></div><div class="sbar"><span class="mono">64</span><i style="width:64px"></i></div><div class="sbar"><span class="mono">80</span><i style="width:80px"></i></div><div class="sbar"><span class="mono">96</span><i style="width:96px"></i></div><div class="sbar"><span class="mono">128</span><i style="width:128px"></i></div>
       </article>
       <article class="card">
         <h4>Corner radii</h4>
         <div class="rads"><div class="rad"><div class="radbox" style="border-radius:4px"></div><p class="mono">4</p><p class="hint">Checkboxes</p></div><div class="rad"><div class="radbox" style="border-radius:8px"></div><p class="mono">8</p><p class="hint">Small chrome</p></div><div class="rad"><div class="radbox" style="border-radius:10px"></div><p class="mono">10</p><p class="hint">Inputs</p></div><div class="rad"><div class="radbox" style="border-radius:16px"></div><p class="mono">16</p><p class="hint">Cards</p></div><div class="rad"><div class="radbox" style="border-radius:24px"></div><p class="mono">24</p><p class="hint">Dialogs</p></div><div class="rad"><div class="radbox" style="border-radius:32px"></div><p class="mono">32</p><p class="hint">Large panels</p></div><div class="rad"><div class="radbox" style="border-radius:999px"></div><p class="mono">999</p><p class="hint">Buttons</p></div></div>
+        <p class="hint" style="margin-top:16px">Message bubbles are 20px with one 4px tail corner.</p>
+      </article>
+    </div>
+    <div class="chrome-row">
+      <article class="card">
+        <h4>Content width</h4>
+        <p>Max 1240px. Prose 760px. That’s the reading line; don’t stretch a paragraph to the app edge.</p>
+      </article>
+      <article class="card">
+        <h4>App chrome</h4>
+        <p>248px sidebar. 64px sticky top bar. Those two are the only fixed app chrome.</p>
+      </article>
+      <article class="card">
+        <h4>Marketing chrome</h4>
+        <p>74px glass header. Full-bleed navy footer. No floating chat bubbles. No sticky banners.</p>
       </article>
     </div>
     <div class="rules" style="margin-top:20px">
@@ -457,16 +551,37 @@ footer.site a{font-weight:600}
       <img src="assets/photo-portrait-2.png" alt="Portrait">
       <img src="assets/photo-portrait-3.png" alt="Portrait">
     </div>
+    <div class="photos secondary">
+      <img src="assets/photo-team-1.png" alt="Team in a workplace">
+      <article class="card note">
+        <h4>Secondary scenes</h4>
+        <p>Quieter workplace photographs for blog, developer and customer tiles. Primary imagery can take a brand shape. Secondary stays plain.</p>
+      </article>
+    </div>
+    <h3>Patterns</h3>
+    <p class="lede">Line-wave and arrow curves. Large, low-contrast, off-canvas — about 18% opacity in a hero. Not tiled. No grain.</p>
+    <div class="patterns">
+      <div class="pattern">
+        <img src="assets/pattern-line-wave.png" alt="Line-wave pattern">
+        <span class="label">Line-wave</span>
+      </div>
+      <div class="pattern">
+        <img src="assets/pattern-arrow-curve.png" alt="Arrow-curve pattern">
+        <span class="label">Arrow curve</span>
+      </div>
+    </div>
     <h3>Product graphics</h3>
-    <p class="lede">Fragments of the real UI, glassy over violet. Never an illustration of an interface.</p>
+    <p class="lede">Fragments of the real UI, glassy white over violet, thin magenta connector. Never an illustration of an interface.</p>
     <div class="graphics">
       <figure><img src="assets/graphic-composer.png" alt="Composer"></figure>
       <figure><img src="assets/graphic-analytics.png" alt="Analytics"></figure>
+      <figure><img src="assets/graphic-conversation.png" alt="Conversation"></figure>
+      <figure><img src="assets/graphic-rich-message.png" alt="Rich message"></figure>
     </div>
     <div class="rules" style="margin-top:28px">
       <article class="rule">
-        <h3>Backgrounds</h3>
-        <p>Mostly white and grey-50. Line-wave and arrow curves sit large, low-contrast, off-canvas — about 18% opacity in a hero. No tiled texture, grain, or photo behind text.</p>
+        <h3>Protection</h3>
+        <p>Gradient scrims, not capsules. Bottom scrim for a caption on a photo; left scrim for text beside one.</p>
       </article>
       <article class="rule">
         <h3>If contrast fails</h3>
@@ -478,33 +593,74 @@ footer.site a{font-weight:600}
 <section class="block" id="components">
   <div class="wrap">
     <h2>Components</h2>
-    <p class="lede">React function components, tokens through CSS custom properties. This page is the visual contract, not the source.</p>
-    <div class="grid2">
+    <p class="lede">This page is the visual contract, not a React tree. We ship these shapes. Tokens through CSS custom properties. Nothing here is a production file index.</p>
+    <div class="ship-shapes">
+      <span>Buttons</span>
+      <span>Cards</span>
+      <span>Inputs</span>
+      <span>Bubbles</span>
+      <span>Phone preview</span>
+      <span>Product lockups</span>
+    </div>
+    <h3>Card variants</h3>
+    <p class="lede">White, 1px hairline <span class="mono">#E0E0EC</span>, 16px corners, navy-tinted shadow. No coloured left-border, ever.</p>
+    <div class="variants">
       <article class="card">
-        <h4>Core</h4>
-        <p>Icon, Logo, Button, IconButton, Badge, Tag, Card, Avatar</p>
+        <h4>Default</h4>
+        <p class="hint">White surface. Everyday content card.</p>
       </article>
-      <article class="card">
-        <h4>Forms</h4>
-        <p>Input, Textarea, Select, Checkbox, Radio, Switch</p>
+      <article class="card subtle">
+        <h4>Subtle</h4>
+        <p class="hint">Grey-50 fill. Quiet grouping, same hairline.</p>
       </article>
-      <article class="card">
-        <h4>Feedback</h4>
-        <p>Alert, Toast, Tooltip, Spinner, ProgressBar</p>
+      <article class="card brand-card">
+        <h4>Brand</h4>
+        <p class="hint">Brand gradient, white type. Hero moments, not body.</p>
       </article>
-      <article class="card">
-        <h4>Navigation, data, messaging</h4>
-        <p>Tabs, SidebarNav, Pagination · StatCard, DataTable · MessageBubble, PhonePreview · ProductLogo, ProductMark · Dialog</p>
-      </article>
+      <div class="glass-stage">
+        <div class="glass-card">
+          <h4>Glass</h4>
+          <p>82% white, 14px blur. Floats over colour, never over body type.</p>
+        </div>
+      </div>
+    </div>
+    <h3>Shadow ladder</h3>
+    <p class="lede">Navy-tinted, never black. xs → xl on a 1 / 2 / 6 / 14 / 28px offset. Brand shadow for a hovered primary.</p>
+    <div class="shades">
+      <div class="shade" style="box-shadow:0 1px 2px rgba(0,42,102,.06)"><span class="mono">xs</span><span class="hint">1px</span></div>
+      <div class="shade" style="box-shadow:0 2px 6px rgba(0,42,102,.08)"><span class="mono">sm</span><span class="hint">2px</span></div>
+      <div class="shade" style="box-shadow:0 6px 16px rgba(0,42,102,.10)"><span class="mono">md</span><span class="hint">6px</span></div>
+      <div class="shade" style="box-shadow:0 14px 34px rgba(0,42,102,.12)"><span class="mono">lg</span><span class="hint">14px</span></div>
+      <div class="shade" style="box-shadow:0 28px 64px rgba(0,42,102,.16)"><span class="mono">xl</span><span class="hint">28px</span></div>
+      <div class="shade" style="box-shadow:0 10px 24px rgba(76,35,204,.28)"><span class="mono">brand</span><span class="hint">hover</span></div>
+    </div>
+    <h3>Inputs, bubbles, phone</h3>
+    <div class="live" style="margin-top:12px">
+      <div>
+        <div class="field" style="margin-bottom:20px">
+          <label>Sender name</label>
+          <input type="text" value="Kudosity alerts" readonly>
+          <p class="hint">1.5px control border. 10px corners. Focus is a 3px violet halo at 38%.</p>
+        </div>
+        <article class="card">
+          <h4>Borders</h4>
+          <p>1px for cards and tables, 1.5px on controls, 2px on the active tab underline. Neutral or violet — never semantic colour on its own.</p>
+        </article>
+      </div>
+      <div class="phone">
+        <div class="bubble">You’re on for Thursday at 10:00.</div>
+        <div class="bubble out">See you then.</div>
+        <p class="hint" style="margin-top:12px">20px bubble, one 4px tail.</p>
+      </div>
     </div>
     <div class="rules" style="margin-top:20px">
       <article class="rule">
-        <h3>Cards</h3>
-        <p>White, 1px hairline <span class="mono">#E0E0EC</span>, 16px corners, navy-tinted shadow. No coloured left-border, ever.</p>
+        <h3>Iconography</h3>
+        <p>Kudosity ships no icon set. The O device is a logo, never a toolbar icon. UI icons are Lucide, 2px rounded-cap — a flagged stand-in until an in-house set exists. Unicode only for … pagination and — empty cells. No emoji in Kudosity UI.</p>
       </article>
       <article class="rule">
-        <h3>Borders</h3>
-        <p>1px for cards and tables, 1.5px on controls, 2px on the active tab underline. Neutral or violet — never semantic colour on its own.</p>
+        <h3>Buttons</h3>
+        <p>Pills, always. Labels never take a full stop. Hovered primary picks up the brand shadow.</p>
       </article>
     </div>
   </div>
@@ -512,19 +668,70 @@ footer.site a{font-weight:600}
 <section class="block alt" id="voice">
   <div class="wrap">
     <h2>Voice</h2>
-    <p class="lede">Funny, casual, everyday, irreverent, plain English. Never serious, formal, expert-y, stuffy, traditional or technical. A blush full stop on a subtitle, once per view — never in body copy, never on a button.</p>
+    <p class="lede">Funny, casual, everyday, irreverent, plain English. Never serious, formal, expert-y, stuffy, traditional or technical. A blush full stop on the H1, once per view — never in body copy, never on a button.</p>
+    <div class="grid4">
+      <article class="card vcard"><h3>Active voice</h3><p>Start your 14-day trial today. Not “a 14-day trial is available”.</p></article>
+<article class="card vcard"><h3>Make the complex simple</h3><p>If it takes a second sentence to explain the first, rewrite the first.</p></article>
+<article class="card vcard"><h3>Be informative, then stop</h3><p>Say the thing. Don’t dump the wiki.</p></article>
+<article class="card vcard"><h3>Speak conversationally</h3><p>Contractions are welcome. And and But can start a sentence. Say us, not Kudosity; you, not customers.</p></article>
+<article class="card vcard"><h3>Don’t intimidate</h3><p>We’re on your side. Never talk down, never talk over.</p></article>
+<article class="card vcard"><h3>Don’t be bossy</h3><p>Invite, don’t order. The product does the heavy lifting.</p></article>
+<article class="card vcard"><h3>Benefits over features</h3><p>What they get, not what the stack does.</p></article>
+<article class="card vcard"><h3>Don’t overdo wordplay</h3><p>A wink is enough. If you hear yourself being clever, stop.</p></article>
+    </div>
+    <h3>Person, emoji, casing</h3>
+    <div class="grid3">
+      <article class="card vcard">
+        <h3>Person</h3>
+        <p>We and you. Never “Kudosity enables organisations to…”.</p>
+      </article>
+      <article class="card vcard">
+        <h3>Emoji</h3>
+        <p>Not part of the brand system. Say emoticon in copy. An emoticon may appear inside a customer message (the composer picker) — never in our own UI labels, headings, marketing copy or slides.</p>
+      </article>
+      <article class="card vcard">
+        <h3>Casing</h3>
+        <p>Sentence case everywhere. Tiny uppercase micro-labels — eyebrows, table headers — are the one exception. Brand full stop is blush, once per view, on the H1 only.</p>
+      </article>
+    </div>
+    <h3>Before / after</h3>
+    <p class="lede">From the brandbook. Same idea, our voice.</p>
+    <div class="ba">
+      <article class="no"><p class="tag">Don’t write</p><p class="line">“Known represents the next generation of frictionless messaging innovation.”</p></article>
+      <article class="yes"><p class="tag">Write</p><p class="line">“Build meaningful relationships with your customers through simple messaging experiences.”</p></article>
+    </div>
+    <div class="ba">
+      <article class="no"><p class="tag">Don’t write</p><p class="line">“We envision a world in which businesses build lasting relationships with people through the power of conversation.”</p></article>
+      <article class="yes"><p class="tag">Write</p><p class="line">“We exist to help businesses build authentic relationships with their customers.”</p></article>
+    </div>
+    <h3>Microcopy</h3>
+    <p class="lede">Numbers take thousands separators; rates one decimal. Australian English — personalise, organisation.</p>
+    <div class="grid4">
+      <article class="card vcard"><h3>Labels</h3><p>Sentence case, no colon. The field already says what it is.</p></article>
+<article class="card vcard"><h3>Hints</h3><p>Explain, don’t instruct. A hint is a why, not a how.</p></article>
+<article class="card vcard"><h3>Errors</h3><p>Describe what happened. Then how to get moving again.</p></article>
+<article class="card vcard"><h3>Empty and success</h3><p>Stay warm. The product just did something — or nothing yet. Don’t go cold.</p></article>
+    </div>
+    <h3>The Kudosaurus</h3>
+    <p class="lede">Jargon in, plain English out. If a word sounds like a pitch deck, swap it.</p>
     <table>
       <thead><tr><th>Don’t write</th><th>Write</th></tr></thead>
       <tbody>
         <tr><td>Frictionless</td><td>Simple, smooth and easy</td></tr>
-<tr><td>Seamless</td><td>Smooth and uninterrupted</td></tr>
 <tr><td>Leverage</td><td>Use effectively</td></tr>
-<tr><td>Robust</td><td>Strong and reliable</td></tr>
 <tr><td>Empower</td><td>Enable</td></tr>
-<tr><td>Scalable</td><td>Can grow with demand</td></tr>
 <tr><td>Optimise</td><td>Make the best use of</td></tr>
-<tr><td>Synergy</td><td>Working together effectively</td></tr>
+<tr><td>Seamless</td><td>Smooth and uninterrupted</td></tr>
+<tr><td>Robust</td><td>Strong and reliable</td></tr>
+<tr><td>Scalable</td><td>Can grow with demand</td></tr>
 <tr><td>Cutting-edge</td><td>The latest and greatest</td></tr>
+<tr><td>Deep dive</td><td>In-depth look</td></tr>
+<tr><td>Paradigm shift</td><td>A big change in thinking</td></tr>
+<tr><td>Synergy</td><td>Working together effectively</td></tr>
+<tr><td>API</td><td>Connectors (in non-developer copy)</td></tr>
+<tr><td>E2E encryption</td><td>Fully secure messaging</td></tr>
+<tr><td>Push notification</td><td>Instant alert</td></tr>
+<tr><td>Read receipt</td><td>Seen notification</td></tr>
 <tr><td>Emoji</td><td>Emoticon</td></tr>
       </tbody>
     </table>
@@ -549,15 +756,15 @@ footer.site a{font-weight:600}
     <div class="rules">
       <article class="rule">
         <h3>Icons</h3>
-        <p>Kudosity ships no icon set. UI icons are Lucide, 2px rounded-cap. Swap via Icon.jsx if an in-house set lands.</p>
+        <p>Kudosity ships no icon set. Lucide, 2px rounded-cap, is a flagged stand-in until an in-house set exists. The O is a logo, not a toolbar icon.</p>
       </article>
       <article class="rule">
         <h3>Fonts</h3>
         <p>Noto Sans loads from Google Fonts here. If we self-host, the import becomes local @font-face.</p>
       </article>
       <article class="rule">
-        <h3>Source fidelity</h3>
-        <p>No codebase or Figma was supplied with the original reference. Components follow the brandbook, not production.</p>
+        <h3>This page</h3>
+        <p>No Figma or production codebase was supplied. This is the visual contract. Do not treat a kit components folder as what we ship.</p>
       </article>
     </div>
   </div>
