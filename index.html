@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kudosity design system</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --violet:#4C23CC; --navy:#002A66; --blush:#FFB3B3; --magenta:#FF23CC; --plum:#3B0066; --orchid:#BF3BD9;
+  --white:#fff; --grey-25:#FBFBFE; --grey-50:#F6F6FB; --grey-100:#EEEEF6; --grey-200:#E0E0EC;
+  --grey-400:#9C9CB4; --grey-500:#71718C; --grey-700:#3A3A4C;
+  --success:#0F9D63; --danger:#D93A4A;
+  --brand:linear-gradient(135deg,#3B0066 0%,#4C23CC 100%);
+  --shadow:0 6px 16px rgba(0,42,102,.10);
+  --sans:"Noto Sans",system-ui,sans-serif;
+  --mono:"Noto Sans Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;color:var(--grey-700);background:var(--white);line-height:1.6;letter-spacing:.01em}
+img,svg{display:block;max-width:100%}
+a{color:var(--violet);text-decoration:none}
+a:hover{color:#2F1585}
+.wrap{width:min(1120px,calc(100% - 64px));margin:0 auto}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.stop{color:var(--blush)}
+.mono{font-family:var(--mono);font-weight:500;letter-spacing:0}
+
+/* hero — band 1 */
+.hero{background:var(--brand);color:#fff;padding:48px 0 88px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;bottom:-180px;width:520px;height:520px;border-radius:50%;border:48px solid rgba(255,255,255,.08);pointer-events:none}
+.hero .wordmark{width:168px;margin-bottom:64px}
+.hero .eyebrow{color:var(--blush);margin-bottom:20px}
+.hero h1{font-size:clamp(40px,6vw,64px);font-weight:700;line-height:1.08;letter-spacing:0;color:#fff;max-width:16ch}
+.hero p{margin-top:20px;font-size:18px;font-weight:300;color:rgba(255,255,255,.8);max-width:46ch}
+.hero nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:32px}
+.hero nav a{display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-size:14px;font-weight:600;border:1px solid rgba(255,255,255,.18)}
+.hero nav a:hover{background:rgba(255,255,255,.2);color:#fff}
+
+/* shapes */
+.shapes{background:var(--grey-50);padding:80px 0 88px}
+.shapes h2{font-size:32px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:8px}
+.shapes .lede{color:var(--grey-500);margin-bottom:40px;max-width:52ch}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media (max-width:900px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.grid4{grid-template-columns:1fr}}
+.shape{background:#fff;border:1px solid var(--grey-200);border-radius:16px;box-shadow:var(--shadow);padding:20px 20px 24px}
+.shape .preview{background:var(--grey-50);border:1px solid var(--grey-200);border-radius:8px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;min-height:120px}
+.shape .preview .box{background:var(--violet);border-radius:4px}
+.shape h3{font-size:20px;font-weight:700;color:var(--navy)}
+.shape .ratio{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);margin-bottom:4px}
+.shape .sizes{margin-top:8px;font-size:13px;color:var(--grey-500)}
+.shape .sizes strong{color:var(--navy);font-weight:600}
+
+section.block{padding:88px 0}
+section.block.alt{background:var(--grey-50)}
+section.block h2{font-size:32px;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:8px}
+section.block .lede{color:var(--grey-500);margin-bottom:32px;max-width:56ch}
+
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--grey-200);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+th,td{text-align:left;padding:14px 20px;border-bottom:1px solid var(--grey-200);font-size:15px}
+th{font-weight:600;color:var(--navy);background:var(--grey-25);font-size:13px;letter-spacing:.02em}
+td.mono,th.mono{font-family:var(--mono);font-size:13px}
+tr:last-child td{border-bottom:0}
+.note{margin-top:16px;font-size:14px;color:var(--grey-500)}
+
+.groups{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media (max-width:720px){.groups{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--grey-200);border-radius:16px;box-shadow:var(--shadow);padding:24px}
+.card h3{font-size:18px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.card .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);margin-bottom:12px}
+.card ul{list-style:none}
+.card li{padding:8px 0;border-bottom:1px solid var(--grey-200);font-size:15px;display:flex;justify-content:space-between;gap:16px}
+.card li:last-child{border-bottom:0}
+.card li span.sz{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--navy);white-space:nowrap}
+
+.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:720px){.rules{grid-template-columns:1fr}}
+.rule{background:#fff;border:1px solid var(--grey-200);border-radius:16px;padding:24px}
+.rule h3{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.rule p{font-size:15px}
+
+/* production — band 2 */
+.order{background:var(--navy);color:#fff;padding:88px 0;position:relative;overflow:hidden}
+.order::after{content:"";position:absolute;left:-80px;top:-120px;width:360px;height:360px;border-radius:50%;border:32px solid rgba(255,255,255,.06);pointer-events:none}
+.order h2{font-size:32px;font-weight:700;color:#fff;margin-bottom:8px}
+.order .lede{color:rgba(255,255,255,.72);margin-bottom:40px;max-width:52ch}
+.steps{display:grid;grid-template-columns:1fr;gap:0}
+.step{display:grid;grid-template-columns:88px 1fr;gap:24px;padding:28px 0;border-top:1px solid rgba(255,255,255,.16)}
+.step:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.step .n{font-size:32px;font-weight:700;color:var(--blush);line-height:1}
+.step h3{font-size:20px;font-weight:600;color:#fff;margin-bottom:4px}
+.step p{color:rgba(255,255,255,.72);font-size:15px}
+
+footer.site{padding:48px 0 64px;background:var(--grey-50)}
+footer.site .inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer.site .wordmark{width:140px}
+footer.site p{font-size:13px;color:var(--grey-500)}
+footer.site a{font-weight:600}
+
+.pill{display:inline-flex;align-items:center;height:40px;padding:0 20px;border-radius:999px;font-size:14px;font-weight:600}
+.pill.primary{background:var(--violet);color:#fff}
+.pill.primary:hover{background:#3D1BA8;color:#fff}
+.pill.ghost{border:1px solid var(--violet);color:var(--violet);background:transparent}
+
+.hub{padding:80px 0 120px;background:var(--grey-50);min-height:100vh}
+.hub .wordmark{width:168px;margin-bottom:56px}
+.hub h1{font-size:clamp(40px,6vw,56px);font-weight:700;color:var(--navy);line-height:1.08;max-width:14ch;margin-bottom:16px}
+.hub .intro{font-size:18px;color:var(--grey-500);max-width:42ch;margin-bottom:48px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media (max-width:720px){.cards{grid-template-columns:1fr}}
+.cards a.card{display:block;padding:32px;transition:transform .14s cubic-bezier(.2,.6,.2,1),box-shadow .14s}
+.cards a.card:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,42,102,.12);color:inherit}
+.cards .tag{color:var(--violet)}
+.cards h2{font-size:24px;font-weight:700;color:var(--navy);margin:8px 0 8px}
+.cards p{color:var(--grey-700);font-size:15px}
+</style>
+</head>
+<body>
+<main class="hub">
+  <div class="wrap">
+    <svg class="wordmark" width="168"  role="img" aria-label="Kudosity" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 878.15 193.14">
+  
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <polygon fill="#002a66" points="115.71 172.43 78.39 172.43 30.55 115.57 30.55 172.43 0 172.43 0 20.99 30.55 20.99 30.55 106.57 77.23 53.88 113.9 53.88 62.73 110.58 115.71 172.43"></polygon>
+      <path fill="#002a66" d="m232.74,53.88v118.55h-30.31v-9.9c-10.23,8.06-23.13,12.49-36.51,12.49s-24.24-4.23-32.11-12.58c-7.67-8.63-10.65-18.48-10.65-35.13V53.88h30.54v68.71c0,9.74,1.62,15.6,5.39,19.6,3.6,3.81,9.22,5.82,16.26,5.82,11.75,0,21.73-6.48,26.84-10.56V53.88h30.55Z"></path>
+      <path fill="#002a66" d="m330.06,20.99v35.65c-6.28-2.57-14.7-5.36-25.19-5.36-17.22,0-32.92,6.48-44.22,18.24-11.23,11.69-17.41,27.86-17.41,45.52s5.74,32.74,16.59,43.82c10.22,10.42,24.12,16.16,39.15,16.16,11.76,0,22.91-3.52,31.55-9.95v7.36h30.08V20.99h-30.55Zm0,119.05c-7.34,5.92-15.42,8.92-24.01,8.92-19.15,0-32.03-14.01-32.03-34.86,0-25.06,16.92-36.28,33.68-36.28,9.63,0,17.4,3.05,22.36,5.73v56.49Z"></path>
+      <path fill="#002a66" d="m609.52,136.04c0,24.04-19.64,38.98-51.26,38.98-17.58,0-35.05-3.93-46.73-10.51l-.51-.28v-28.85l1.55,1c15.2,9.8,34.37,13.28,46.17,13.28,16.72,0,20.23-5.99,20.23-11.03,0-4.64-2.07-7.82-12.68-10.35-2.57-.61-5.77-1.25-9.16-1.93-9.75-1.96-21.9-4.4-30.19-8.28-11.66-5.34-17.33-14.67-17.33-28.51,0-23.61,18.82-38.28,49.13-38.28,15.27,0,32.3,3.66,43.39,9.31l.54.28v27.29l-1.47-.78c-15.16-8.09-31.63-10.98-41.99-10.98-7.12,0-19.06,1.38-19.06,10.57,0,5.26,3.63,7.97,13.86,10.35,2.18.45,4.73.93,7.43,1.43,9.86,1.85,22.14,4.14,30.74,8.07,11.83,5.53,17.34,14.82,17.34,29.22Z"></path>
+      <path fill="#002a66" d="m654.07,18.7c0,10.31-8.38,18.69-18.69,18.69s-18.93-8.21-18.93-18.69,8.49-18.7,18.93-18.7,18.69,8.39,18.69,18.7Z"></path>
+      <rect fill="#002a66" x="619.99" y="53.88" width="30.54" height="118.55"></rect>
+      <path fill="#002a66" d="m712.12,80.42v48.3c0,13.3,5.3,19.77,16.22,19.77,5.95,0,11.67-1.89,15.42-3.47l1.39-.58v25.73l-.57.27c-5.91,2.83-14.93,4.58-23.55,4.58-25.82,0-39.46-15.03-39.46-43.46v-51.14h-20.52v-26.54h20.52v-29.75l30.55-7.32v37.07h33.03v26.54h-33.03Z"></path>
+      <g>
+        <path fill="#002a66" d="m435.11,51.29c-36.49,0-64,26.6-64,61.87,0,16.83,6.43,32.37,18.1,43.81l1.88,19.91,21.89-5.41c7,2.35,14.44,3.54,22.13,3.54,36.48,0,63.99-26.59,63.99-61.85s-27.51-61.87-63.99-61.87Zm0,96.49c-19.07,0-33.45-14.88-33.45-34.62s14.38-34.87,33.45-34.87,33.44,15.32,33.44,34.87-14.37,34.62-33.44,34.62Z"></path>
+        <path fill="#ffb3b3" d="m449.65,119.57l8.91-.03c-2.17,11.31-11.8,19.67-23.46,19.67s-21.29-8.36-23.46-19.67l8.92.03h29.09Z"></path>
+      </g>
+      <path fill="#002a66" d="m878.15,53.88l-63.77,139.26h-31.46l18.54-38.93-46.39-100.33h32.82l14.65,32.69c4.95,11.21,9.89,22.79,14.67,34.47,5.67-13.38,10.49-24.45,15.12-34.71l14.63-32.45h31.19Z"></path>
+    </g>
+  </g>
+</svg>
+    <h1>Design system<span class="stop">.</span></h1>
+    <p class="intro">Working reference for Kudosity. Open a page, steal the tokens, don’t invent a third gradient.</p>
+    <div class="cards">
+      <a class="card" href="./reference/index.html">
+        <p class="tag eyebrow">v0.1.0</p>
+        <h2>Full reference</h2>
+        <p>Colour, type, logo, products, components. The standalone HTML, in a browser.</p>
+      </a>
+      <a class="card" href="./ad-specs.html">
+        <p class="tag eyebrow">Paid media</p>
+        <h2>Ad specs</h2>
+        <p>Four masters, then crops. PMAX, GDN, Reddit, Meta. Build once, never scale up.</p>
+      </a>
+    </div>
+  </div>
+</main>
+</body>
+</html>
