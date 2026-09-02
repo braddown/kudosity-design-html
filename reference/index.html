@@ -87,6 +87,17 @@ section.block h4{font-size:16px;font-weight:600;color:var(--navy);margin:0 0 12p
 .specimen .sub{font-size:32px;font-weight:600;color:var(--navy);margin-top:16px}
 .specimen .body{font-size:16px;font-weight:300;max-width:52ch;margin-top:16px}
 .specimen .meta{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);margin-top:8px}
+.specimen .h1{font-size:40px;font-weight:700;color:var(--navy);line-height:1.25;margin-top:16px}
+.specimen .lead{font-size:18px;font-weight:300;line-height:1.6;max-width:52ch;margin-top:16px}
+.specimen .small{font-size:14px;font-weight:300;max-width:52ch;margin-top:16px}
+.specimen .caption{font-size:12px;font-weight:300;color:var(--grey-500);margin-top:6px}
+.blush{color:#FFB3B3}
+.weights{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:16px 0 8px}
+.weights .demo{font-size:22px;color:var(--navy)}
+.weights .lbl{font-size:12px;color:var(--grey-500);margin-top:6px}
+.codeline{font-family:var(--mono);font-size:14px;color:var(--grey-700);margin-top:4px}
+.codebox{background:var(--navy);border-radius:12px;padding:20px 24px;margin-top:12px;max-width:520px}
+.codebox code{font-family:var(--mono);color:#fff;font-size:14px;line-height:1.7;white-space:pre;font-weight:400}
 .pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
 .pill{display:inline-flex;align-items:center;height:40px;padding:0 20px;border-radius:999px;font-size:14px;font-weight:600;border:0}
 .pill.primary{background:var(--violet);color:#fff}
@@ -382,22 +393,50 @@ footer.site a{font-weight:600}
   <div class="wrap">
     <h2>Type</h2>
     <p class="lede">Noto Sans, across every medium. Light 300 for paragraphs, SemiBold 600 for subtitles, Bold 700 for headers. Sentence case. Australian English. No substitute family in produced artwork.</p>
+    <h3>Weights in use</h3>
+    <p class="hint">Light 300 paragraph · SemiBold 600 subtitle · Bold 700 header</p>
+    <div class="weights">
+      <div class="wt"><p class="demo" style="font-weight:300">Light</p><p class="lbl">300 — paragraph</p></div>
+      <div class="wt"><p class="demo" style="font-weight:400">Regular</p><p class="lbl">400 — UI default</p></div>
+      <div class="wt"><p class="demo" style="font-weight:500">Medium</p><p class="lbl">500 — labels</p></div>
+      <div class="wt"><p class="demo" style="font-weight:600">SemiBold</p><p class="lbl">600 — subtitles, buttons</p></div>
+      <div class="wt"><p class="demo" style="font-weight:700">Bold</p><p class="lbl">700 — headers</p></div>
+    </div>
+    <h3>Headings</h3>
+    <p class="hint">Display 52 Bold · H1 40 Bold · H2 32 SemiBold with the blush full stop</p>
     <div class="specimen">
-      <p class="meta">Slogan · 64px · 700</p>
-      <p class="slogan">Messaging your customers love</p>
-      <p class="meta">Display · 52px · 700</p>
-      <p class="display">Built for the way people talk</p>
-      <p class="meta">Subtitle · 32px · 600</p>
-      <p class="sub">Start your 14-day trial today</p>
-      <p class="meta">Body · 16px · 300</p>
-      <p class="body">Bulk campaigns, alerts, appointment reminders and one-time passcodes. Speak conversationally. Contractions welcome. Say us rather than Kudosity, you rather than customers.</p>
-      <p class="meta">Mono · sender IDs and keys</p>
-      <p class="body mono">SENDER_ID · sk_live_4c23cc…</p>
+      <p class="meta">Slogan · 64/1.08 · Bold 700 · tracking 0</p>
+      <p class="slogan">Messaging your customers love<span class="blush">.</span></p>
+      <p class="meta">Display · 52/1.08 · Bold 700</p>
+      <p class="display">Make business more human</p>
+      <p class="meta">H1 · 40/1.25 · Bold 700</p>
+      <p class="h1">Send your first campaign in minutes</p>
+      <p class="meta">H2 subtitle · 32/1.2 · SemiBold 600 + blush full stop</p>
+      <p class="sub">Built for the way people talk<span class="blush">.</span></p>
+    </div>
+    <h3>Body &amp; paragraph</h3>
+    <p class="hint">Noto Sans Light/Regular, tracking +0.01em, line-height 1.6</p>
+    <div class="specimen">
+      <p class="meta">Lead · 18/1.6 · Light</p>
+      <p class="lead">We help businesses build authentic relationships with customers through simplified messaging experiences.</p>
+      <p class="meta">Body · 16/1.6 · Regular</p>
+      <p class="body">Send your first campaign in minutes. Upload a list, write your message, and we&rsquo;ll format the numbers and strip the landlines for you.</p>
+      <p class="meta">Small · 14 · and caption · 12</p>
+      <p class="small">Helper text sits under a field and explains, it never instructs.</p>
+      <p class="caption">112 / 160 · 1 SMS</p>
+    </div>
+    <h3>Mono</h3>
+    <p class="hint">Noto Sans Mono for API keys, sender IDs and code</p>
+    <p class="codeline">POST /v1/sms/send</p>
+    <div class="codebox"><code>{ "to": "+61400000000",
+  "from": "KUDOSITY",
+  "body": "Your code is 481923" }</code></div>
+    <p class="meta" style="margin-top:24px">Sender IDs and keys</p>
+    <p class="body mono">SENDER_ID · sk_live_4c23cc…</p>
       <div class="pills">
         <span class="pill primary">Get started</span>
         <span class="pill ghost">See how it works</span>
       </div>
-    </div>
   </div>
 </section>
 <section class="block alt" id="space">
